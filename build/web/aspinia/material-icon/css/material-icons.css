@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+  local('MaterialIcons-Regular'),
+  url(../font/MaterialIcons-Regular.woff2) format('woff2'),
+  url(../font/MaterialIcons-Regular.woff) format('woff'),
+  url(../font/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.md-icon {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  transform: translate(0, 0);
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.md-icon.md-14 { font-size: 14px; }
+.md-icon.md-16 { font-size: 16px; }
+.md-icon.md-18 { font-size: 18px; }
+.md-icon.md-20 { font-size: 20px; }
+.md-icon.md-24 { font-size: 24px; }
+.md-icon.md-30 { font-size: 30px; }
+.md-icon.md-36 { font-size: 36px; }
+.md-icon.md-48 { font-size: 48px; }
+.md-icon.md-60 { font-size: 60px; }
+.md-icon.md-80 { font-size: 80px; }
+.md-icon.md-120 { font-size: 120px; }
+.md-icon.md-170 { font-size: 170px; }
+
+.md-icon.md-dark { color: rgba(0, 0, 0, 0.54); }
+.md-icon.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+.md-icon.md-light { color: rgba(255, 255, 255, 1); }
+.md-icon.md-light.md-inactive { color: rgba(255, 255, 255, 0.30); }
