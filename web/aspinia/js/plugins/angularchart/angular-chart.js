@@ -34,14 +34,26 @@
   Chart.defaults.global.elements.line.borderWidth = 2;
   Chart.defaults.global.elements.rectangle.borderWidth = 2;
   Chart.defaults.global.legend.display = false;
+  // Chart.defaults.global.colors = [
+  //   '#97BBCD', // blue
+  //   '#DCDCDC', // light grey
+  //   '#F7464A', // red
+  //   '#46BFBD', // green
+  //   '#FDB45C', // yellow
+  //   '#949FB1', // grey
+  //   '#4D5360'  // dark grey
+  // ];
+
   Chart.defaults.global.colors = [
-    '#97BBCD', // blue
-    '#DCDCDC', // light grey
-    '#F7464A', // red
-    '#46BFBD', // green
-    '#FDB45C', // yellow
-    '#949FB1', // grey
-    '#4D5360'  // dark grey
+    '#2E4053',
+    '#616A6B',
+    '#BA4A00',
+    '#B9770E',
+    '#239B56',
+    '#138D75',
+    '#2E86C1',
+    '#76448A',
+    '#CB4335'
   ];
 
   var useExcanvas = typeof window.G_vmlCanvasManager === 'object' &&

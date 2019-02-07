@@ -113,7 +113,7 @@
 		<script src="aspinia/js/plugins/chosen/chosen.js"></script>
 		<script src="aspinia/js/plugins/wow/wow.min.js"></script>
 		<script src="aspinia/js/plugins/angularchart/Chart.min.js"></script>
-		<script src="aspinia/js/plugins/angularchart/angular-chart.min.js"></script>
+		<script src="aspinia/js/plugins/angularchart/angular-chart.js"></script>
 		<!-- <script src="aspinia/js/plugins/chartJs/Chart.min.js"></script>
 		<script src="aspinia/js/plugins/chartJs/angles.js"></script> -->
 
