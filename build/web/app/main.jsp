@@ -111,15 +111,18 @@
 		<script src="aspinia/js/plugins/elastic/elastic.js"></script>
 		<script src="aspinia/js/plugins/chosen/chosen.jquery.js"></script>
 		<script src="aspinia/js/plugins/chosen/chosen.js"></script>
-		<script src="aspinia/js/plugins/wow/wow.min.js"></script>		
-		<script src="aspinia/js/plugins/chartJs/Chart.min.js"></script>
-		<script src="aspinia/js/plugins/chartJs/angles.js"></script>
+		<script src="aspinia/js/plugins/wow/wow.min.js"></script>
+		<script src="aspinia/js/plugins/angularchart/Chart.min.js"></script>
+		<script src="aspinia/js/plugins/angularchart/angular-chart.min.js"></script>
+		<!-- <script src="aspinia/js/plugins/chartJs/Chart.min.js"></script>
+		<script src="aspinia/js/plugins/chartJs/angles.js"></script> -->
 
 		<!-- Inicio -->
 		<script src="app/inicio/inicio.controller.js"></script>
 
 		<!-- Metricas -->
 		<script src="app/metricas/metricas.controller.js"></script>
+		<script src="app/metricas/metricas.factory.js"></script>
 
 		<!-- Logs -->
 		<script src="app/logs/logs.controller.js"></script>

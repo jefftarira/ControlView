@@ -5,26 +5,16 @@
     .module('app')
     .controller('metricController', metricController);
 
-  metricController.$inject = ["$window", "$state", "logsFactory"];
+  metricController.$inject = ["$window", "$state", "logsFactory", "metricasFactory"];
 
-  function metricController($window, $state, logsFactory) {
+  function metricController($window, $state, logsFactory, metricasFactory) {
     var vm = this;
     vm.registrarlog = registrarlog;
+    vm.getChartTotalCity = getChartTotalCity;
     vm.cargando = false;
+    vm.chartTotalCity = metricasFactory.chartTotalCity;
 
     $window.scrollTo(0, 0);
-
-    registrarlog();
-    function registrarlog() {
-      return logsFactory.registrarEvento('Metricas')
-        .then(function () {
-          console.log("Se registro evento en log");
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
-
     var tos = {
       closeButton: true,
       debug: false,
@@ -41,52 +31,28 @@
       hideMethod: "fadeOut"
     };
 
-    vm.lineOptions = {
-      title: {
-        display: true,
-        text: 'Custom Chart Title'
-      },
-      scales: {
-        xAxes: [{
-          scaleLabel: {
-            display: true,
-            labelString: 'Date'
-          }
-        }],
-        yAxes: [{
-          scaleLabel: {
-            display: true,
-            labelString: 'value'
-          }
-        }]
-      },
-    };
+    registrarlog();
+    getChartTotalCity();
 
+    function registrarlog() {
+      return logsFactory.registrarEvento('Metricas')
+        .then(function () {
+          console.log("Se registro evento en log");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
 
-    vm.lineData = {
-      labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"],
-      datasets: [
-        {
-          label: "Example dataset",
-          fillColor: "rgba(220,220,220,0.5)",
-          strokeColor: "rgba(220,220,220,1)",
-          pointColor: "rgba(220,220,220,1)",
-          pointStrokeColor: "#fff",
-          pointHighlightFill: "#fff",
-          pointHighlightStroke: "rgba(220,220,220,1)",
-          data: [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-          label: "Example dataset",
-          fillColor: "rgba(26,179,148,0.5)",
-          strokeColor: "rgba(26,179,148,0.7)",
-          pointColor: "rgba(26,179,148,1)",
-          pointStrokeColor: "#fff",
-          pointHighlightFill: "#fff",
-          pointHighlightStroke: "rgba(26,179,148,1)",
-          data: [28, 48, 40, 19, 86, 27, 90]
-        }
-      ]
-    };
+    function getChartTotalCity() {
+      return metricasFactory.getChartTotalCity()
+        .then(function () {
+          vm.chartTotalCity = metricasFactory.chartTotalCity;
+          console.log(vm.chartTotalCity);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   }
 })();

@@ -5,14 +5,19 @@
       <div class="col-xs-12">
         <div class="ibox float-e-margins">
           <div class="ibox-title">
-            <h5>Line Chart Example
-              <small>With custom colors.</small>
+            <h5>Total de datos por año.
+              <small></small>
             </h5>
           </div>
           <div class="ibox-content">
             <div>
-              <canvas linechart options="vm.lineOptions" data="vm.lineData" responsive=true height="140"></canvas>
-              <!-- <canvas id="myChart"></canvas> -->
+              <canvas id="bar" class="chart chart-bar"
+                chart-data="vm.chartTotalCity.data" 
+                chart-labels="vm.chartTotalCity.labels" 
+                chart-series="vm.chartTotalCity.series"
+                chart-options="vm.chartTotalCity.options"
+                chart-legend="true">
+              </canvas>              
             </div>
           </div>
         </div>

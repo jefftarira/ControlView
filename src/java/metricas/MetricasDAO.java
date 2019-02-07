@@ -21,22 +21,12 @@ public class MetricasDAO {
           + "group by 1, 2\n"
           + "order by 1";
 
-  private final String otherSelect = "select date(i.fecha) as fecha,\n"
-          + "       o.descripcion,\n"
-          + "       count(i.id)   as conteo\n"
+  private final String sTotalPointByYear = "select o.descripcion, extract(year from i.fecha) as year, count(*) as conteo\n"
           + "from incidentes i,\n"
           + "     origen o\n"
           + "where i.id_origen = o.id\n"
-          + "  and (date(i.fecha) between '2017-03-01' and '2017-03-31')\n"
           + "group by 1, 2\n"
-          + "order by 1;\n"
-          + "\n"
-          + "select o.descripcion, extract(year from i.fecha), count(*)\n"
-          + "from incidentes i,\n"
-          + "     origen o\n"
-          + "where i.id_origen = o.id\n"
-          + "group by 1,2\n"
-          + "order by 1,2";
+          + "order by 1, 2";
 
   public MetricasDAO() {
     con = new ConexionRedshift();
@@ -58,7 +48,25 @@ public class MetricasDAO {
               )
       );
     }
+    rs.close();
+    con.cerrar();
+    return lista;
+  }
 
+  public ArrayList<Incidentes> getTotalPointByYear()
+          throws ClassNotFoundException, SQLException {
+    ArrayList<Incidentes> lista = new ArrayList<>();
+
+    con.conectar();
+    PreparedStatement ps = con.prepareStatement(sTotalPointByYear);
+    ResultSet rs = ps.executeQuery();
+    while (rs.next()) {
+      Incidentes i = new Incidentes();
+      i.setNombreOrigen(rs.getString("descripcion"));
+      i.setConteo(rs.getInt("conteo"));
+      i.setAnio(rs.getInt("year"));
+      lista.add(i);
+    }
     rs.close();
     con.cerrar();
     return lista;

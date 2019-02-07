@@ -6,6 +6,7 @@ public class Incidentes {
 
   public int id;
   public Date fecha;
+  public int anio;
   public String nombreOrigen;
   public int conteo;
 
@@ -55,6 +56,14 @@ public class Incidentes {
 
   public void setConteo(int conteo) {
     this.conteo = conteo;
+  }
+
+  public int getAnio() {
+    return anio;
+  }
+
+  public void setAnio(int anio) {
+    this.anio = anio;
   }
 
 }

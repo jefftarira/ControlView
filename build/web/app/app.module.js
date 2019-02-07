@@ -5,7 +5,7 @@
     .module('app',
     ['ui.router', 'ui.bootstrap', 'datePicker',
       'localytics.directives', 'ui.utils.masks',
-      'monospaced.elastic','angles'])
+      'monospaced.elastic','chart.js'])
     .filter('capitalize', capitalize)
     .filter('limitText', limitText);
 

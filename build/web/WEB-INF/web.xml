@@ -8,6 +8,10 @@
         <servlet-name>guardarRegistroLog</servlet-name>
         <servlet-class>logs.servicios.guardarRegistroLog</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TotalDataByYearCity</servlet-name>
+        <servlet-class>metricas.servicios.TotalDataByYearCity</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IncidentesRangoFechas</servlet-name>
         <url-pattern>/IncidentesRangoFechas</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>guardarRegistroLog</servlet-name>
         <url-pattern>/guardarRegistroLog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TotalDataByYearCity</servlet-name>
+        <url-pattern>/TotalDataByYearCity</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
