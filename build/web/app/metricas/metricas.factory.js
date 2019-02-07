@@ -12,18 +12,14 @@
       getChartTotalCity: getChartTotalCity,
       chartTotalCity: {
         options: {
-          legend: { display: true },
-          scales: {
-            xAxes: [{
-              gridLines: {
-                offsetGridLines: false
-              }
-            }]
+          legend: {
+            display: true
           },
         },
         data: [],
         series: [],
         labels: [],
+        cargando: false,
       },
     };
 

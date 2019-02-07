@@ -45,6 +45,7 @@
     }
 
     function getChartTotalCity() {
+      vm.chartTotalCity.cargando = true;
       return metricasFactory.getChartTotalCity()
         .then(function () {
           vm.chartTotalCity = metricasFactory.chartTotalCity;
@@ -52,6 +53,9 @@
         })
         .catch(function (error) {
           console.log(error);
+        })
+        .finally(function () {
+          vm.chartTotalCity.cargando = false;
         });
     }
   }

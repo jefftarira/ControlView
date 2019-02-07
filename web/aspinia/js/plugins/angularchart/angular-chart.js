@@ -34,25 +34,26 @@
   Chart.defaults.global.elements.line.borderWidth = 2;
   Chart.defaults.global.elements.rectangle.borderWidth = 2;
   Chart.defaults.global.legend.display = false;
-  // Chart.defaults.global.colors = [
-  //   '#97BBCD', // blue
-  //   '#DCDCDC', // light grey
-  //   '#F7464A', // red
-  //   '#46BFBD', // green
-  //   '#FDB45C', // yellow
-  //   '#949FB1', // grey
-  //   '#4D5360'  // dark grey
-  // ];
+/*   Chart.defaults.global.colors = [
+    '#97BBCD', // blue
+    '#DCDCDC', // light grey
+    '#F7464A', // red
+    '#46BFBD', // green
+    '#FDB45C', // yellow
+    '#949FB1', // grey
+    '#4D5360'  // dark grey
+  ]; */
 
-  Chart.defaults.global.colors = [
-    '#2E4053',
-    '#616A6B',
+  Chart.defaults.global.colors = [    
+    
+    '#138D75',
     '#BA4A00',
     '#B9770E',
-    '#239B56',
-    '#138D75',
     '#2E86C1',
+    '#239B56',
+    '#616A6B',    
     '#76448A',
+    '#2E4053',
     '#CB4335'
   ];
 
@@ -279,10 +280,10 @@
       var alpha = color[3] || 1;
       color = color.slice(0, 3);
       return {
-        backgroundColor: rgba(color, 0.2),
+        backgroundColor: rgba(color, 0.3),
         pointBackgroundColor: rgba(color, alpha),
         pointHoverBackgroundColor: rgba(color, 0.8),
-        borderColor: rgba(color, alpha),
+        borderColor: rgba(color, 0.5),
         pointBorderColor: '#fff',
         pointHoverBorderColor: rgba(color, alpha)
       };
