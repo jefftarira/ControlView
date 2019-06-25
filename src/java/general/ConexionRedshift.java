@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class ConexionRedshift {
 
   // DESARROLLO
-    private final String server = "redshift-cluster-1.cvhtjiuf6fbn.us-east-1.redshift.amazonaws.com";
+    private final String server = "redshift-cluster-1.csq1muuuo03p.us-east-1.redshift.amazonaws.com";
     private final String dbname = "dev";
     private final String port = "5439";
     private final String user = "master";
