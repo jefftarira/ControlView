@@ -1,18 +1,46 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top"
+  role="navigation">
   <div class="container">
-    <div class="navbar-header page-scroll">						
-      <a class="navbar-brand" ui-sref="inicio" ng-bind="cg.config.logo"></a>						
+    <div class="navbar-header page-scroll">
+      <a class="navbar-brand"
+        ui-sref="inicio"
+        ng-bind="cg.config.logo"></a>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
+    <div id="navbar"
+      class="navbar-collapse collapse">
+      <ul class="nav navbar-nav m-l-lg navbar-right flex-center-vertical">
         <li ng-class="{active: $state.includes('inicio')}">
-          <a class="page-scroll text-navy" ui-sref="inicio">Inicio</a>
+          <a class="page-scroll text-navy"
+            ui-sref="inicio">Inicio</a>
         </li>
         <li ng-class="{active: $state.includes('metricas')}">
-          <a class="page-scroll" ui-sref="metricas">Metricas</a>
+          <a class="page-scroll"
+            ui-sref="metricas">Metricas</a>
         </li>
         <li ng-class="{active: $state.includes('log')}">
-          <a class="page-scroll" ui-sref="log">Log</a>
+          <a class="page-scroll"
+            ui-sref="log">Logs</a>
+        </li>
+        <li ng-class="{active: $state.includes('usuarios')}">
+          <a class="page-scroll"
+            ui-sref="usuarios">Usuarios</a>
+        </li>
+        <li class="m-l-lg"></li>
+        <li class="m-l-lg">
+          <div uib-dropdown>
+            <button uib-dropdown-toggle
+              class="btn btn-dark-profile">
+              <i class="md-icon md-light md-36">account_circle</i>
+            </button>
+            <ul uib-dropdown-menu
+              class="animated fadeInRight m-t-xs">
+              <li>
+                <span>Registrado como <strong>jtarira</strong></span>
+              </li>
+              <li class="divider"></li>
+              <li><a ng-click="cg.cerrarSesion()">Cerrar sesión</a></li>
+            </ul>
+          </div>
         </li>
       </ul>
     </div>

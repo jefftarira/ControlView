@@ -7781,19 +7781,6 @@ body.landing-page {
   padding: 15px 0;
 }
 
-.landing-page .navbar-default .dropdown-menu {
-  background-image: url(patterns/header-profile.png);
-}
-
-.landing-page .navbar-default.navbar-scroll .dropdown-menu {
-  background-image: none;
-}
-
-.landing-page .navbar-default .dropdown-menu>li>a:focus, .landing-page .navbar-default .dropdown-menu>li>a:hover {
-  color: #1ab394;
-  text-decoration: none;
-}
-
 .landing-page .navbar-default {
   background-image: url(patterns/header-profile.png);
   border-color: transparent;
@@ -8254,6 +8241,34 @@ body.landing-page {
 .landing-page .btn-primary.disabled, .landing-page .btn-primary.disabled:hover, .landing-page .btn-primary.disabled:focus, .landing-page .btn-primary.disabled:active, .landing-page .btn-primary.disabled.active, .landing-page .btn-primary[disabled], .landing-page .btn-primary[disabled]:hover, .landing-page .btn-primary[disabled]:focus, .landing-page .btn-primary[disabled]:active, .landing-page .btn-primary.active[disabled], .landing-page fieldset[disabled] .btn-primary, .landing-page fieldset[disabled] .btn-primary:hover, .landing-page fieldset[disabled] .btn-primary:focus, .landing-page fieldset[disabled] .btn-primary:active, .landing-page fieldset[disabled] .btn-primary.active {
   background-color: #1dc5a3;
   border-color: #1dc5a3;
+}
+
+.landing-page>.navbar-default.navbar-scroll>.dropdown-menu {
+  background-image: none;
+}
+
+.landing-page .navbar-default .dropdown-menu>li>span {
+  display: block;
+  line-height: 25px;
+  margin: 4px;
+  padding: 3px 20px;
+  white-space: nowrap;
+  font-size: 13px;
+  color: #000;
+}
+
+.landing-page .navbar-default .dropdown-menu>li>a {
+  color: rgb(65, 65, 65) !important;
+  text-decoration: none;
+  letter-spacing: normal;
+  font-weight: normal;
+  text-transform: none;
+  font-size: 13px;
+}
+
+.landing-page .navbar-default .dropdown-menu>li>a:focus, .landing-page .navbar-default .dropdown-menu>li>a:hover {
+  color: #000;
+  text-decoration: none;
 }
 
 @media (min-width: 768px) {
@@ -9806,6 +9821,17 @@ body.md-skin {
   transform-origin: center;
   -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
   animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+.btn-dark-profile {
+  padding: 0;
+  background: none;
+}
+
+.btn-dark-profile:hover, .btn-dark-profile:active, .btn-dark-profile:focus {
+  background-color: none;
+  background: none;
+  border-color: none;
 }
 
 @-webkit-keyframes colors {

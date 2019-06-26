@@ -72,6 +72,7 @@ public class login extends HttpServlet {
       out.println(res);
       out.flush();
       out.close();
+      
     }
   }
 

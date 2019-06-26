@@ -2,12 +2,10 @@
 
 <div class="middle-box text-center loginscreen animated fadeInDown">
 	<div class="container-login">
-		<div>
-			<div>
-				<img src="aspinia/icons/newLogos/logo_transparent_background.png"
-					class="image-responsive"
-					alt="">
-			</div>
+		<div class="navbar-header page-scroll">
+			<a class="navbar-brand"
+				ui-sref="inicio"
+				ng-bind="cg.config.logo"></a>
 		</div>
 		<div class="hr-line-dashed m-t-xs m-b-md"></div>
 		<label class="text-muted">Ingrese usuario y contraseña</label>
@@ -41,16 +39,6 @@
 				class="ladda-button btn btn-primary block full-width m-b flex-center-center"
 				data-style="slide-right">Ingresar
 			</button>
-			<!-- <a class="m-t"
-				href="#/forgot">Olvidó su contraseña?</a> -->
 		</form>
-	</div>
-	<div>
-		<!-- <p class="m-t">
-			<small>Derechos Reservados &copy; {{mcl.config.anio}} para
-				<a target="_blank"
-					href="http://{{mcl.config.web}}">{{mcl.config.empresa}}</a>
-			</small>
-		</p> -->
 	</div>
 </div>

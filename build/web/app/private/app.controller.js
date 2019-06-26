@@ -10,6 +10,7 @@
   function mainController($state, global) {
     var cg = this;
     cg.getConfig = getConfig;
+    cg.cerrarSesion = cerrarSesion;
 
     cg.config = {};
     cg.loading = false;
@@ -47,5 +48,18 @@
           cg.loading = false;
         });
     }
+
+    function cerrarSesion() {
+      return global.cerrarSesion()
+        .then(function (data) {
+          if (!global.dataSesion.error) {
+            location.reload();
+          }
+          else {
+            console.error("No se pudo cerrar sesión");
+          }
+        });
+    }
+
   }
 })();

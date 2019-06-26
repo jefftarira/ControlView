@@ -3,8 +3,7 @@ package logs.modelos;
 import java.sql.Timestamp;
 
 public class Log {
-
-  private int id;
+  
   private String descripcion;
   private String modulo;
   private String estado;
@@ -15,23 +14,14 @@ public class Log {
   public Log() {
   }
 
-  public Log(int id, String descripcion, String modulo, String estado,
-          Timestamp fecha, String orgien, String server) {
-    this.id = id;
+  public Log(String descripcion, String modulo, String estado,
+          Timestamp fecha, String orgien, String server) {    
     this.descripcion = descripcion;
     this.modulo = modulo;
     this.estado = estado;
     this.fecha = fecha;
     this.orgien = orgien;
     this.server = server;
-  }
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
   }
 
   public String getDescripcion() {

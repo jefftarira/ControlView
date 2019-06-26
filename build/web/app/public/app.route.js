@@ -11,7 +11,7 @@
       .when('/',{
       templateUrl   : 'app/public/login/login.jsp',
       controller    : 'loginController',
-      controllerAs  : 'vm'
+      controllerAs  : 'vm'      
     }).otherwise({
       redirectTo    : '/'
     });  

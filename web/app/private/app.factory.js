@@ -10,6 +10,7 @@
 
     var factory = {
       getDataConfig: getDataConfig,
+      cerrarSesion: cerrarSesion,
       dataConfig: {},
       dataSesion: {
         error: false,
@@ -35,5 +36,18 @@
         });
       return q.promise;
     }
+
+    function cerrarSesion() {
+      var q = $q.defer();
+      $http.post('cerrarSesion')
+        .success(function (data) {
+          q.resolve(data);
+        })
+        .error(function (error) {
+          q.reject(error);          
+        });
+      return q.promise;
+    }
+
   }
 })();
