@@ -71,8 +71,7 @@ public class login extends HttpServlet {
       res.put("excepcion", ex);
       out.println(res);
       out.flush();
-      out.close();
-      
+      out.close();      
     }
   }
 
