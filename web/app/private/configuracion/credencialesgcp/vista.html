@@ -1,0 +1,194 @@
+<div>
+  <form name="formConfGcp"
+    novalidate>
+    <div class="ibox no-margins">
+      <div class="ibox-content no-borders">
+        <h2 class="p-h-xs border-bottom">Configuración de seguridad GCP</h2>
+        <div class="row m-t-md">
+          <div class="col-xs-7">
+            <div class="form-group"
+              ng-class="{'has-error': formConfGcp.nombreProyecto.$invalid 
+                        && formConfGcp.nombreProyecto.$dirty }">
+              <label class="control-label">Nombre del proyecto</label>
+              <input type="text"
+                class="form-control"
+                ng-model="vm.data.nombre_proyecto"
+                name="nombreProyecto"
+                ng-maxlength="100"
+                required>
+              <div class="m-t-xs"
+                ng-show="formConfGcp.nombreProyecto.$invalid 
+                          && formConfGcp.nombreProyecto.$dirty">
+                <small class="text-danger"
+                  ng-show="v.$error.required">
+                  Ingrese nombre del proyecto
+                </small>
+                <small class="text-danger"
+                  ng-show="formConfGcp.nombreProyecto.$error.maxlength">
+                  No debe superar 100 caracteres</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-7">
+            <div class="form-group"
+              ng-class="{'has-error': formConfGcp.emailIam.$invalid 
+                        && formConfGcp.emailIam.$dirty }">
+              <label class="control-label">Correo electronico IAM</label>
+              <input type="email"
+                class="form-control"
+                ng-model="vm.data.email_iam"
+                name="emailIam"
+                ng-maxlength="200"
+                required>
+              <div class="m-t-xs"
+                ng-show="formConfGcp.emailIam.$invalid 
+                          && formConfGcp.emailIam.$dirty">
+                <small class="text-danger"
+                  ng-show="formConfGcp.emailIam.$error.required">
+                  Ingrese correo electronico IAM
+                </small>
+                <small class="text-danger"
+                  ng-show="formConfGcp.emailIam.$error.email">
+                  Ingrese correo válido
+                </small>
+                <small class="text-danger"
+                  ng-show="formConfGcp.emailIam.$error.maxlength">
+                  No debe superar 200 caracteres
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-7">
+            <div class="form-group"
+              ng-class="{'has-error': formConfGcp.idUnico.$invalid 
+                        && formConfGcp.idUnico.$dirty }">
+              <label class="control-label">ID Único</label>
+              <input type="text"
+                class="form-control"
+                ng-model="vm.data.id_unico"
+                name="idUnico"
+                ng-maxlength="200"
+                required>
+              <div class="m-t-xs"
+                ng-show="formConfGcp.idUnico.$invalid 
+                          && formConfGcp.idUnico.$dirty">
+                <small class="text-danger"
+                  ng-show="formConfGcp.idUnico.$error.required">
+                  Ingrese ID único
+                </small>
+                <small class="text-danger"
+                  ng-show="formConfGcp.idUnico.$error.maxlength">
+                  No debe superar 200 caracteres
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-7">
+            <div class="form-group"
+              ng-class="{'has-error': formConfGcp.idClave.$invalid 
+                        && formConfGcp.idClave.$dirty }">
+              <label class="control-label">ID de la clave</label>
+              <input type="text"
+                class="form-control"
+                ng-model="vm.data.id_clave"
+                name="idClave"
+                ng-maxlength="200"
+                required>
+              <div class="m-t-xs"
+                ng-show="formConfGcp.idClave.$invalid 
+                          && formConfGcp.idClave.$dirty">
+                <small class="text-danger"
+                  ng-show="formConfGcp.idClave.$error.required">
+                  Ingrese ID de la clave
+                </small>
+                <small class="text-danger"
+                  ng-show="formConfGcp.idClave.$error.maxlength">
+                  No debe superar 200 caracteres
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-7">
+            <div class="form-group"
+              ng-class="{'has-error': formConfGcp.Bucket.$invalid 
+                        && formConfGcp.Bucket.$dirty }">
+              <label class="control-label">Bucket de archivos</label>
+              <input type="text"
+                class="form-control"
+                ng-model="vm.data.bucket_file"
+                name="bucket"
+                ng-maxlength="100"
+                required>
+              <div class="m-t-xs"
+                ng-show="formConfGcp.bucket.$invalid 
+                          && formConfGcp.bucket.$dirty">
+                <small class="text-danger"
+                  ng-show="formConfGcp.bucket.$error.required">
+                  Ingrese nombre del bucket
+                </small>
+                <small class="text-danger"
+                  ng-show="formConfGcp.bucket.$error.maxlength">
+                  No debe superar 100 caracteres
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-7">
+            <div class="form-group"
+              ng-class="{'has-error': formConfGcp.endpointDataproc.$invalid 
+                        && formConfGcp.endpointDataproc.$dirty }">
+              <label class="control-label">Endpoint Dataproc</label>
+              <input type="text"
+                class="form-control"
+                ng-model="vm.data.endpoint_dataproc"
+                name="endpointDataproc"
+                ng-maxlength="100"
+                required>
+              <div class="m-t-xs"
+                ng-show="formConfGcp.endpointDataproc.$invalid 
+                          && formConfGcp.endpointDataproc.$dirty">
+                <small class="text-danger"
+                  ng-show="formConfGcp.endpointDataproc.$error.required">
+                  Ingrese endproint
+                </small>
+                <small class="text-danger"
+                  ng-show="formConfGcp.endpointDataproc.$error.maxlength">
+                  No debe superar 100 caracteres
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hr-line-dashed"></div>
+
+        <div class="row">
+          <div class="col-xs-3">
+            <div class="form-group">
+              <button class="btn btn-main btn-success ladda-button"
+                data-style="slide-right"
+                type="button"
+                ng-click="vm.guardar()"
+                ng-disabled="formConfGcp.$invalid">GUARDAR</button>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </form>
+</div>

@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row m-t-lg">
+    <h2>Historial de procesamiento</h2>
+  </div>
+
+  <div class="row p-xs no-borders">
+    <div class="col-xs-3 p-xxs">
+      <span class="text-bold">Fecha</s>
+    </div>
+    <div class="col-xs-1 p-xxs">
+      <span>Cloud</span>
+    </div>
+    <div class="col-xs-3 p-xxs">
+      <span>Instancias</span>
+    </div>
+    <div class="col-xs-2 p-xxs">
+      <span>Algoritmo</span>
+    </div>
+    <div class="col-xs-1 p-xxs">
+      <span>Procesado</span>
+    </div>
+    <div class="col-xs-2 p-xxs">
+      <span>Tiempo</span>
+    </div>
+  </div>
+
+  <div class="row ibox-content box-hover p-xs m-b-xs no-borders animated fadeIn"
+    ng-repeat="his in vm.data">
+    <div class="col-xs-3 p-xxs">
+      <span class="no-margins text-muted active-camp"
+        ng-bind="his.fecha  | date:'EEE d MMMM, yyyy - h:mm a'"></h4>
+    </div>
+    <div class="col-xs-1 p-xxs">
+      <span class="label"
+        ng-class="{'label-warning': his.cloud == 'AWS',
+                    'label-success':his.cloud == 'GCP'}">
+        <span ng-bind="his.cloud"></span>
+      </span>
+    </div>
+    <div class="col-xs-3 p-xxs">
+      <span class="text-muted"
+        ng-bind="his.maquinas"></span>
+    </div>
+    <div class="col-xs-2 p-xxs">
+      <span class=""
+        ng-bind="his.algoritmo"></span>
+    </div>
+    <div class="col-xs-1 p-xxs">
+      <span class=""
+        ng-bind="his.registros + ' puntos'"></span>
+    </div>
+    <div class="col-xs-2 p-xxs">
+      <span class="font-bold"
+        ng-bind="his.tiempo + ' segundos'"></span>
+    </div>
+  </div>
+
+
+
+</div>

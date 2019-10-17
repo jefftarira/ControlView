@@ -2,12 +2,14 @@
 
 <div class="middle-box text-center loginscreen animated fadeInDown">
 	<div class="container-login">
-		<div class="navbar-header page-scroll">
-			<a class="navbar-brand"
-				ui-sref="inicio"
-				ng-bind="cg.config.logo"></a>
+		<div class="flex-center-center">
+			<div class="navbar-header">
+				<a class="app-brand"
+					href="#">ControlView</a>
+			</div>
 		</div>
-		<div class="hr-line-dashed m-t-xs m-b-md"></div>
+
+		<div class="hr-line-dashed m-t-lg m-b-md"></div>
 		<label class="text-muted">Ingrese usuario y contraseña</label>
 		<form class="m-xs"
 			role="form"

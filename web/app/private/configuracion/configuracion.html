@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row m-t-lg">
+
+    <div class="col-xs-3 p-r-xs">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+          <div class="file-manager">
+            <h5>OPCIONES</h5>
+            <div class="hr-line-dashed"></div>
+            <ul class="config-menu"
+              style="padding: 0">
+              <li ng-class="{active: $state.includes('configuracion.credencialesaws')}"><a
+                  ui-sref="configuracion.credencialesaws">Credenciales AWS</a></li>
+              <li ng-class="{active: $state.includes('configuracion.credencialesgcp')}"><a ui-sref="configuracion.credencialesgcp">Credenciales GCP</a>
+              </li>
+              <!-- <li><a href="#">Usuarios</a></li> -->
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-9 animated fadeInRight">
+      <div ui-view>
+      </div>
+    </div>
+
+  </div>
+</div>

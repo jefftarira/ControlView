@@ -75,6 +75,7 @@
     .directive('chartPie', ['ChartJsFactory', function (ChartJsFactory) { return new ChartJsFactory('pie'); }])
     .directive('chartPolarArea', ['ChartJsFactory', function (ChartJsFactory) { return new ChartJsFactory('polarArea'); }])
     .directive('chartBubble', ['ChartJsFactory', function (ChartJsFactory) { return new ChartJsFactory('bubble'); }])
+    .directive('chartScatter', ['ChartJsFactory', function (ChartJsFactory) { return new ChartJsFactory('scatter'); }])
     .name;
 
   /**

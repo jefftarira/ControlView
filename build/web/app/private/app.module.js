@@ -3,9 +3,9 @@
 
   angular
     .module('app',
-    ['ui.router', 'ui.bootstrap', 'datePicker',
-      'localytics.directives', 'ui.utils.masks',
-      'monospaced.elastic','chart.js'])
+      ['ui.router', 'ui.bootstrap', 'datePicker',
+        'localytics.directives', 'ui.utils.masks',
+        'monospaced.elastic', 'chart.js', 'nvd3'])
     .filter('capitalize', capitalize)
     .filter('limitText', limitText);
 

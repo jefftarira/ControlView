@@ -1,36 +1,32 @@
-<div class="container">
-
-  <div class="wrapper wrapper-content animated fadeInRight">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="ibox float-e-margins">
-          <div class="ibox-title">
-            <h5>Total de datos por año.
-              <small></small>
-            </h5>
-          </div>
-          <div class="ibox-content">
-            <div ng-if="!vm.chartTotalCity.cargando">
-              <canvas id="bar" class="chart chart-bar"
-                chart-data="vm.chartTotalCity.data" 
-                chart-labels="vm.chartTotalCity.labels" 
-                chart-series="vm.chartTotalCity.series"
-                chart-options="vm.chartTotalCity.options">
-              </canvas>              
-            </div>            
-            <div class="wrapper wrapper-content no-padding m-t-xs">
-              <div ng-if="vm.chartTotalCity.cargando" class="flex-center-center p-md">
-                  <svg class="spinner" width="40px" height="40px" viewBox="0 0 66 66">
-                    <circle class="path" fill="none" stroke-width="6" 
-                      stroke-linecap="round" cx="33" cy="33" r="30">
-                    </circle>
-                  </svg>
-                </div>
-            </div>
-          </div>
+<div>
+  <div class="fixed-menu">
+    <div class="ibox float-e-margins">
+      <div class="ibox-content">
+        <div class="file-manager">
+          <h5>OPCIONES</h5>
+          <div class="hr-line-dashed"></div>
+          <ul class="config-menu"
+            style="padding: 0">
+            <li ng-class="{active: $state.includes('metricas.aws')}">
+              <a ui-sref="metricas.aws">Amazon Web Services</a>
+            </li>
+            <li ng-class="{active: $state.includes('metricas.gcp')}">
+              <a ui-sref="metricas.gcp">Google Cloud Platform</a>
+            </li>
+            <li ng-class="{active: $state.includes('metricas.historico')}">
+              <a ui-sref="metricas.historico">Historial</a>
+            </li>
+          </ul>
+          <div class="clearfix"></div>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="row m-t-lg">
+    <div class="col-xs-12 animated fadeInRight">
+      <div ui-view>
+      </div>
+    </div>
+  </div>
 </div>

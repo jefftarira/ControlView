@@ -8,12 +8,18 @@ import java.sql.SQLException;
 public class ConexionMysql {
 
   // DESARROLLO
-  private final String SERVER = "db.czo22n7vybjz.us-east-1.rds.amazonaws.com";
+  private final String SERVER = "localhost";
   private final String DBNAME = "control";
   private final String PORT = "3306";
   private final String USER = "user";
-  private final String PASSW ="reload20";
+  private final String PASSW = "12345678";
 
+  //AWS
+  //  private final String SERVER = "db.czo22n7vybjz.us-east-1.rds.amazonaws.com";
+  //  private final String DBNAME = "control";
+  //  private final String PORT = "3306";
+  //  private final String USER = "user";
+  //  private final String PASSW = "reload20";
   private Connection con;
 
   public ConexionMysql() {
@@ -22,7 +28,7 @@ public class ConexionMysql {
 
   public void conectar() throws ClassNotFoundException, SQLException {
     Class.forName("com.mysql.jdbc.Driver");
-    String url = "jdbc:mysql://" + SERVER + ":" + PORT + "/" + DBNAME;
+    String url = "jdbc:mysql://" + SERVER + ":" + PORT + "/" + DBNAME + "?useSSL=false";
     con = DriverManager.getConnection(url, USER, PASSW);
   }
 

@@ -53,6 +53,12 @@
 		<script src="app/private/app.factory.js"></script>
 		<script src="app/private/app.directives.js"></script>
 
+		<script src="aspinia/js/plugins/angular-nvd3/d3.js"></script>
+		<script src="aspinia/js/plugins/angular-nvd3/nv.d3.js"></script>
+		<script src="aspinia/js/plugins/angular-nvd3/angular-nvd3.js"></script>
+		<link rel="stylesheet"
+			href="aspinia/js/plugins/angular-nvd3/nv.d3.css">
+
 	</head>
 
 	<body class="landing-page">
@@ -145,19 +151,41 @@
 		<script src="aspinia/js/plugins/wow/wow.min.js"></script>
 		<script src="aspinia/js/plugins/angularchart/Chart.min.js"></script>
 		<script src="aspinia/js/plugins/angularchart/angular-chart.js"></script>
+		<script src="aspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- <script src="aspinia/js/plugins/uievents/event.js"></script>
+		<script src="aspinia/js/plugins/uimaps/ui-map.js"></script> -->
+
+		<!-- <script type="text/javascript"
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQB1vMLDBb_IXIRR0fK7WfljKh-ddvMcg"></script> -->
 		<!-- <script src="aspinia/js/plugins/chartJs/Chart.min.js"></script>
 		<script src="aspinia/js/plugins/chartJs/angles.js"></script> -->
 
 		<!-- Inicio -->
 		<script src="app/private/inicio/inicio.controller.js"></script>
 
-		<!-- Metricas -->
-		<script src="app/private/metricas/metricas.controller.js"></script>
-		<script src="app/private/metricas/metricas.factory.js"></script>
+		<!-- Metricas AWS-->
+		<script src="app/private/metricas/aws/metricas.controller.js"></script>
+		<script src="app/private/metricas/aws/metricas.factory.js"></script>
+
+		<!-- Metricas GCP-->
+		<script src="app/private/metricas/gcp/metricas.controller.js"></script>
+		<script src="app/private/metricas/gcp/metricas.factory.js"></script>
+
+
+		<!-- Metricas GCP-->
+		<script src="app/private/metricas/historico/historico.controller.js"></script>
+		<script src="app/private/metricas/historico/historico.factory.js"></script>
 
 		<!-- Logs -->
 		<script src="app/private/logs/logs.controller.js"></script>
 		<script src="app/private/logs/logs.factory.js"></script>
+
+		<!-- Configuracion -->
+		<script src="app/private/configuracion/credencialesaws/credencialesaws.controller.js"></script>
+		<script src="app/private/configuracion/credencialesaws/credencialesaws.factory.js"></script>
+		<script src="app/private/configuracion/credencialesgcp/credencialesgcp.controller.js"></script>
+		<script src="app/private/configuracion/credencialesgcp/credencialesgcp.factory.js"></script>
 
 	</body>
 	<script>

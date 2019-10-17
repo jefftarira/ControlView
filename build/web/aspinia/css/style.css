@@ -1995,6 +1995,10 @@ div.dt-button-info {
   border-color: #ed5565;
 }
 
+.has-error .form-control:focus, .has-error .single-line:focus {
+  border-color: #ed5565 !important;
+}
+
 .has-success .control-label {
   color: #1ab394;
 }
@@ -2556,7 +2560,7 @@ div.dt-button-info {
 /* Google Maps */
 
 .google-map {
-  height: 300px;
+  height: 500px;
 }
 
 /* Validation */
@@ -7694,7 +7698,7 @@ body.body-small .vote-icon {
 }
 
 body.landing-page {
-  color: #676a6c;
+  color: #4a4d4e;
   font-family: 'Open Sans', helvetica, arial, sans-serif;
   background-color: #fff;
 }
@@ -9752,6 +9756,13 @@ body.md-skin {
   align-items: center;
 }
 
+.flex-left-end {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
 .flex-right-center {
   display: flex;
   flex-flow: row nowrap;
@@ -9832,6 +9843,60 @@ body.md-skin {
   background-color: none;
   background: none;
   border-color: none;
+}
+
+.config-menu {
+  padding: 0;
+}
+
+.config-menu li {
+  display: block;
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+
+.config-menu li:hover {
+  background-color: #f1f1f1;
+}
+
+.config-menu>li.active {
+  border-left: 4px solid #19aa8d;
+  background-color: #f1f1f1;
+}
+
+.config-menu li a {
+  color: #585858;
+  display: block;
+  padding: 8px 0 8px 10px;
+  font-weight: 600;
+}
+
+.config-menu>li.active a {
+  color: #19aa8d;
+}
+
+.app-brand {
+  color: #fff;
+  height: auto;
+  display: block;
+  font-size: 18px;
+  background: #1ab394;
+  padding: 15px 20px 15px 20px;
+  border-radius: 0 0 5px 5px;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.app-brand:hover {
+  background: #179d82;
+  color: #fff;
+}
+
+.fixed-menu {
+  position: fixed;
+  width: 300px;
+  top: 120px;
+  z-index: 1;
 }
 
 @-webkit-keyframes colors {

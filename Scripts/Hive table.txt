@@ -1,0 +1,97 @@
+CREATE DATABASE traffic;
+drop table california;
+drop table pekin;
+
+create external table pekin
+(
+    id          int,
+    folder_name string,
+    file_name   string,
+    x           double,
+    y           double,
+    field0      double,
+    field1      double,
+    z           double,
+    date_hour   timestamp,
+    the_geom    string
+) row format delimited
+    fields terminated by ','
+    location '/tmp/pekin.csv';
+
+
+create external table california
+(
+    id          int,
+    folder_name string,
+    file_name   string,
+    unixtime    bigint,
+    latitude    double,
+    longitude   double,
+    speed       double,
+    the_geom    string
+) row format delimited
+    fields terminated by ','
+    location '/tmp/california.csv';
+
+load data inpath '/tmp/california.csv' overwrite into table california;
+
+select file_name, from_unixtime(unixtime), latitude, longitude, speed
+from california;
+
+select from_unixtime(unixtime)
+from california;
+
+select folder_name, file_name, count(*)
+from pekin
+group by folder_name, file_name;
+
+select *
+from pekin
+where folder_name = '026';
+
+select count(id) total
+from california;
+select count(id) total
+from pekin;
+
+
+ANALYZE TABLE california COMPUTE STATISTICS FOR COLUMNS;
+
+describe extended california;
+
+create table pekin
+(
+    id          int,
+    folder_name string,
+    file_name   string,
+    x           double,
+    y           double,
+    field0      double,
+    field1      double,
+    z           double,
+    date_hour   timestamp,
+    the_geom    string
+) row format delimited
+    fields terminated by ',';
+
+
+create table california
+(
+    id          int,
+    folder_name string,
+    file_name   string,
+    unixtime    bigint,
+    latitude    double,
+    longitude   double,
+    speed       double,
+    the_geom    string
+) row format delimited
+    fields terminated by ',';
+
+select 'california' as name, count(c.id) as total
+from california c
+union
+select 'pekin', count(p.id)
+from pekin p;
+
+analyze table california compute statistics;

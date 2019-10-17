@@ -8,7 +8,8 @@
 		.directive('pageTitle', pageTitle)
 		.directive('icheck', icheck)
 		.directive('ngFileModel', ngFileModel)
-		.directive('iboxTools', iboxTools);
+		.directive('iboxTools', iboxTools)
+		.directive('slimScroll', slimScroll);
 
 
 	function pageTitle($rootScope, $timeout) {
@@ -194,6 +195,24 @@
 			}
 		}
 		return bytes + ' P';
+	}
+
+	function slimScroll($timeout) {
+		return {
+			restrict: 'A',
+			scope: {
+				boxHeight: '@'
+			},
+			link: function (scope, element) {
+				$timeout(function () {
+					element.slimscroll({
+						height: scope.boxHeight,
+						railOpacity: 0.9
+					});
+
+				});
+			}
+		};
 	}
 
 

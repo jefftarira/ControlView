@@ -1,0 +1,161 @@
+<div>
+  <form name="formConfAws"
+    novalidate>
+    <div class="ibox no-margins">
+      <div class="ibox-content no-borders">
+        <h2 class="p-h-xs border-bottom">Configuración de seguridad AWS</h2>
+        <div class="row m-t-md">
+          <div class="col-xs-7">
+            <div class="form-group"
+              ng-class="{'has-error': formConfAws.accesskey.$invalid 
+                      && formConfAws.accesskey.$dirty }">
+              <label class="control-label">Access Key</label>
+              <input type="text"
+                class="form-control"
+                ng-model="vm.data.access_key"
+                name="accesskey"
+                ng-maxlength="100"
+                required>
+              <div class="m-t-xs"
+                ng-show="formConfAws.accesskey.$invalid 
+                        && formConfAws.accesskey.$dirty">
+                <small class="text-danger"
+                  ng-show="formConfAws.accesskey.$error.required">
+                  Ingrese access key
+                </small>
+                <small class="text-danger"
+                  ng-show="formConfAws.accesskey.$error.maxlength">
+                  No debe superar 100 caracteres</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-7">
+            <div class="form-group"
+              ng-class="{'has-error': formConfAws.secretkey.$invalid 
+                      && formConfAws.secretkey.$dirty }">
+              <label class="control-label">Secret Key</label>
+              <input type="text"
+                class="form-control"
+                ng-model="vm.data.secret_key"
+                name="secretkey"
+                ng-maxlength="200"
+                required>
+              <div class="m-t-xs"
+                ng-show="formConfAws.secretkey.$invalid 
+                        && formConfAws.secretkey.$dirty">
+                <small class="text-danger"
+                  ng-show="formConfAws.secretkey.$error.required">
+                  Ingrese secret key
+                </small>
+                <small class="text-danger"
+                  ng-show="formConfAws.secretkey.$error.maxlength">
+                  No debe superar 200 caracteres
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-7">
+            <div class="form-group"
+              ng-class="{'has-error': formConfAws.region.$invalid 
+                      && formConfAws.region.$dirty }">
+              <label class="control-label">Región</label>
+              <select chosen
+                disable-search="true"
+                class="chosen-select form-control"
+                name="region"
+                tabindex="4"
+                ng-model="vm.data.region"
+                ng-options="region.region as region.name+' | '+region.region for region in vm.regiones"
+                required>
+              </select>
+              <div class="m-t-xs"
+                ng-show="formConfAws.region.$invalid 
+                        && formConfAws.region.$dirty">
+                <small class="text-danger"
+                  ng-show="formConfAws.region.$error.required">
+                  Seleccione región
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-7">
+            <div class="form-group"
+              ng-class="{'has-error': formConfAws.buckets3.$invalid 
+                        && formConfAws.buckets3.$dirty }">
+              <label class="control-label">Bucket de s3</label>
+              <input type="text"
+                class="form-control"
+                ng-model="vm.data.bucket_s3"
+                name="buckets3"
+                ng-maxlength="100"
+                required>
+              <div class="m-t-xs"
+                ng-show="formConfAws.buckets3.$invalid 
+                          && formConfAws.buckets3.$dirty">
+                <small class="text-danger"
+                  ng-show="formConfAws.buckets3.$error.required">
+                  Ingrese nombre bucket de S3
+                </small>
+                <small class="text-danger"
+                  ng-show="formConfAws.buckets3.$error.maxlength">
+                  No debe superar 100 caracteres
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-7">
+            <div class="form-group"
+              ng-class="{'has-error': formConfAws.endpointemr.$invalid 
+                        && formConfAws.endpointemr.$dirty }">
+              <label class="control-label">Endpoint EMR</label>
+              <input type="text"
+                class="form-control"
+                ng-model="vm.data.endpoint_emr"
+                name="endpointemr"
+                ng-maxlength="100"
+                required>
+              <div class="m-t-xs"
+                ng-show="formConfAws.endpointemr.$invalid 
+                          && formConfAws.endpointemr.$dirty">
+                <small class="text-danger"
+                  ng-show="formConfAws.endpointemr.$error.required">
+                  Ingrese endpoint del cluster EMR
+                </small>
+                <small class="text-danger"
+                  ng-show="formConfAws.endpointemr.$error.maxlength">
+                  No debe superar 200 caracteres
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hr-line-dashed"></div>
+
+        <div class="row">
+          <div class="col-xs-3">
+            <div class="form-group">
+              <button class="btn btn-main btn-success ladda-button"
+                data-style="slide-right"
+                type="button"
+                ng-click="vm.guardar()"
+                ng-disabled="formConfAws.$invalid">GUARDAR</button>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </form>
+</div>

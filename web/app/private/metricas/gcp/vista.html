@@ -1,0 +1,222 @@
+<div class="container">
+  <div class="row m-t-lg">
+    <h2>Google Cloud Platform</h2>
+    <div class="col-xs-4 p-r-sm">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <span class="label label-primary pull-right"
+            ng-bind="vm.infoclusters.gcp.status"></span>
+          <h5 ng-bind="'Cluster Dataproc ' + vm.infoclusters.gcp.id2"></h5>
+        </div>
+        <div class="ibox-content">
+          <div>
+            <div class="stat-percent font-bold text-success"
+              ng-bind="vm.infoclusters.gcp.name"></div>
+            <span>Nombre: </span>
+          </div>
+          <div>
+            <div class="stat-percent font-bold text-primary"
+              ng-bind="vm.infoclusters.gcp.created  | date:'EEEE, d MMMM yyyy - h:mm a'"></div>
+            <span>Creado: </span>
+          </div>
+          <div>
+            <div class="stat-percent font-bold text-navy"
+              ng-bind="vm.infoclusters.gcp.count_instances"></div>
+            <span>Nodos: </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-4">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <span class="label label-primary pull-right"
+            ng-bind=""></span>
+          <h5 ng-bind="'Directorios de Google Storage'"></h5>
+        </div>
+        <div class="ibox-content">
+          <div ng-repeat="file in vm.infoStoragefiles"
+            class="row no-padding no-margins">
+            <div class="col-xs-5 no-padding">
+              <span ng-bind="file.folder"></span>
+            </div>
+            <div class="col-xs-3 no-padding">
+              <div class="stat-percent font-bold text-navy"
+                ng-bind="file.count + ' archivos'"></div>
+            </div>
+            <div class="col-xs-4 no-padding">
+              <div class="stat-percent font-bold text-success"
+                ng-bind="file.size"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-4">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <span class="label label-primary pull-right"
+            ng-bind=""></span>
+          <h5 ng-bind="'Tablas Hive (Dataproc)'"></h5>
+        </div>
+        <div class="ibox-content">
+          <div ng-show="!vm.infoTables.loading">
+            <div ng-repeat="table in vm.infoTables.data">
+              <div class="stat-percent font-bold text-navy"
+                ng-bind="(table.rows | number:0)   + ' registros'"></div>
+              <span ng-bind="table.table"></span>
+            </div>
+          </div>
+
+          <div ng-show="vm.infoTables.loading"
+            class="flex-center-center p-md">
+            <svg class="spinner"
+              width="40px"
+              height="40px"
+              viewBox="0 0 66 66">
+              <circle class="path"
+                fill="none"
+                stroke-width="6"
+                stroke-linecap="round"
+                cx="33"
+                cy="33"
+                r="30">
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 p-r-sm">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Clustering de puntos geograficos</h5>
+        </div>
+        <div class="ibox-content">
+          <form name="frFiltros"
+            novalidate>
+            <div class="flex-left-end m-t-md">
+              <div class="form-group no-margins p-r-xs">
+                <label for="">Ciudad</label>
+                <select class="form-control"
+                  ng-model="vm.data.filtros.city"
+                  ng-options="city.name as city.name for city in vm.data.cities"
+                  ng-change="vm.changeCity()"
+                  required>
+                </select>
+              </div>
+              <div class="form-group no-margins p-r-xs">
+                <label for="">archivo</label>
+                <select class="form-control"
+                  ng-model="vm.data.filtros.archivo"
+                  ng-options="file.nombre as file.nombre +' | '+file.puntos +' puntos'  for file in vm.data.listFiles"
+                  required>
+                </select>
+              </div>
+              <div class="form-group no-margins p-r-xs">
+                <label class="control-label">Iteraciones</label>
+                <input type="text"
+                  class="form-control"
+                  name="maxIter"
+                  ng-maxlength="45"
+                  ng-model="vm.data.filtros.iteraciones"
+                  required>
+              </div>
+
+              <div class="form-group no-margins p-r-xs">
+                <label class="control-label">Clusters</label>
+                <input type="text"
+                  class="form-control"
+                  name="numCluster"
+                  ng-maxlength="45"
+                  ng-model="vm.data.filtros.clusters"
+                  required>
+              </div>
+              <div class="form-group no-margins p-r-xs">
+                <button ng-hide="vm.data.resultado.stepId.length > 0 && vm.data.resultado.stepStatus != 'COMPLETED'"
+                  class="btn btn-main btn-success ladda-button no-margins"
+                  data-style="slide-right"
+                  type="button"
+                  ng-click="vm.procesarPuntos()"
+                  ng-disabled="frFiltros.$invalid">PROCESAR</button>
+              </div>
+            </div>
+
+            <div class="flex-left-end m-t-sm">
+              <div class="flex-left-center m-b-xs"
+                ng-show="vm.data.resultado.stepId.length > 0 && vm.data.resultado.stepStatus != 'COMPLETED'">
+                <svg class="spinner"
+                  width="20px"
+                  height="20px"
+                  viewBox="0 0 66 66">
+                  <circle class="path"
+                    fill="none"
+                    stroke-width="6"
+                    stroke-linecap="round"
+                    cx="33"
+                    cy="33"
+                    r="30">
+                  </circle>
+                </svg>
+                <div class="p-l-xs">
+                  <span>
+                    <span class="text-muted "> Procesando... tarea </span>
+                    <span class="label"
+                      ng-bind="vm.data.resultado.stepId"></span>
+                    <span class="text-muted"> Estado: </span>
+                    <span class="badge badge-primary"
+                      ng-bind="vm.data.resultado.stepStatus"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+
+          <div>
+            <!-- ng-show="vm.dataPekin.cpPuntos.length > 0" -->
+            <div class="m-t-lg">
+              <nvd3 options="vm.cpPuntosOptions"
+                data="vm.data.cpPuntos"></nvd3>
+            </div>
+            <div class="row m-t-lg">
+              <div class="col-xs-8">
+                <nvd3 options="vm.cpRumenOptions"
+                  data="vm.data.cpResumen"></nvd3>
+              </div>
+              <div class="col-xs-4">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="ibox">
+                      <div class="ibox-content no-borders">
+                        <h4>Total puntos procesados</h4>
+                        <h1 class="no-margins"
+                          ng-bind="vm.data.resultado.totalPuntos"></h1>
+                        <small>puntos</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12">
+                    <div class="ibox">
+                      <div class="ibox-content no-borders">
+                        <h4>Tiempo de ejecución</h4>
+                        <h1 class="no-margins"
+                          ng-bind="vm.data.resultado.time"></h1>
+                        <small>segundos</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
